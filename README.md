@@ -58,5 +58,5 @@ client.run('[YOUR-TOKEN-DISCORD-BOT]')
 ```
 Test to run in Terminal:
 ```bash
-py -3 [YOUR-FILE].py
+py [YOUR-FILE].py
 ```

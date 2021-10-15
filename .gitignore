@@ -1,0 +1,6 @@
+bot-env
+config.json
+__pycache__
+note.txt
+settings.py
+example.txt
