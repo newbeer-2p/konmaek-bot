@@ -23,7 +23,9 @@ class Hi(commands.Cog, name="Hi"):
             color=colorTheme
         )
 
-        await ctx.channel.send(embed=embed)
+        msg = await ctx.channel.send(embed=embed)
+        for emoji in ["🇭", "🇮"]:
+            await msg.add_reaction(emoji)
 
 def setup(bot: commands.Bot):
     bot.add_cog(Hi(bot))

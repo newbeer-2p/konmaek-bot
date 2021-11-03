@@ -19,7 +19,9 @@ class CheerUp(commands.Cog, name="CheerUp"):
             description=random.choice(text),
             color=colorTheme
         )
-        await ctx.channel.send(embed=embed)
+        msg = await ctx.channel.send(embed=embed)
+        for emoji in ["🇸", "🇺", "🇿", "🇴"]:
+            await msg.add_reaction(emoji)
 
 def setup(bot: commands.Bot):
     bot.add_cog(CheerUp(bot))

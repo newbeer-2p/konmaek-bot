@@ -17,7 +17,9 @@ class Me(commands.Cog, name="Me"):
         )
         embed.set_thumbnail(url=user.avatar_url)
 
-        await ctx.channel.send(embed=embed)
+        msg = await ctx.channel.send(embed=embed)
+        for emoji in ["🇱", "🇴", "🇻", "🇪"]:
+            await msg.add_reaction(emoji)
 
 def setup(bot: commands.Bot):
     bot.add_cog(Me(bot))
