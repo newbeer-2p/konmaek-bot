@@ -1,4 +1,7 @@
 # Konmaek Bot
+## **Invite your server**
+https://discord.com/oauth2/authorize?client_id=854672997536235561&scope=bot
+
 
 ## **Create Discord Bot**
 
