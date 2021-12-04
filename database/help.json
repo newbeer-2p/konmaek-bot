@@ -4,6 +4,7 @@
         "description": "แสดงคนจัดทำ",
         "category": "etc",
         "short": "au",
+        "attributes": [],
         "commands": []
     },
     {
@@ -11,6 +12,7 @@
         "description": "คุยกับเค้า",
         "category": "funny",
         "short": "ct",
+        "attributes": [],
         "commands": [
             {
                 "name": "setup",
@@ -25,6 +27,7 @@
         "description": "ให้กำลังใจ",
         "category": "funny",
         "short": "cu",
+        "attributes": [],
         "commands": []
     },
     {
@@ -32,6 +35,7 @@
         "description": "แฟน",
         "category": "funny",
         "short": "",
+        "attributes": [],
         "commands": [
             {
                 "name": "set",
@@ -65,6 +69,7 @@
         "description": "ค้นหา",
         "category": "general",
         "short": "f",
+        "attributes": [],
         "commands": [
             {
                 "name": "channel",
@@ -81,6 +86,7 @@
         "description": "อาหาร",
         "category": "funny",
         "short": "fd",
+        "attributes": [],
         "commands": [
             {
                 "name": "random",
@@ -95,6 +101,7 @@
         "description": "เพื่อน",
         "category": "funny",
         "short": "fr",
+        "attributes": [],
         "commands": [
             {
                 "name": "add",
@@ -119,6 +126,7 @@
         "description": "เกี่ยวกับกลุ่ม",
         "category": "study",
         "short": "g",
+        "attributes": [],
         "commands": [
             {
                 "name": "random",
@@ -136,6 +144,7 @@
         "description": "ช่วยเหลือ",
         "category": "general",
         "short": "h",
+        "attributes": [],
         "commands": []
     },
     {
@@ -143,6 +152,7 @@
         "description": "ทักทาย",
         "category": "funny",
         "short": "",
+        "attributes": [],
         "commands": []
     },
     {
@@ -150,6 +160,7 @@
         "description": "บทบาท",
         "category": "general",
         "short": "r",
+        "attributes": [],
         "commands": [
             {
                 "name": "create",
@@ -180,6 +191,25 @@
         "description": "เป่ายิ่งชุบ",
         "category": "funny",
         "short": "",
+        "attributes": [],
+        "commands": []
+    },
+    {
+        "name": "play",
+        "description": "เล่นเพลงจาก Youtube",
+        "category": "music",
+        "short": "p",
+        "attributes": [
+            "ชื่อเพลง"
+        ],
+        "commands": []
+    },
+    {
+        "name": "me",
+        "description": "ตัวเธอเอง",
+        "category": "funny",
+        "short": "",
+        "attributes": [],
         "commands": []
     }
 ]
