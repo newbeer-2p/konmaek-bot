@@ -18,7 +18,6 @@ class Group(commands.Cog, name="Group"):
                     color=colorTheme
                 )
             if not attr[0].isdigit():
-                attr.pop(0)
                 embed.add_field(
                     name="ผู้โชคดีก็คือ...",
                     value=f"```{random.choice(attr)}```"

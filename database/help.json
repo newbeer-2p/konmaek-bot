@@ -1,0 +1,186 @@
+[
+    {
+        "name": "author",
+        "description": "แสดงคนจัดทำ",
+        "category": "etc",
+        "short": "au",
+        "commands": []
+    },
+    {
+        "name": "chat",
+        "description": "คุยกับเค้า",
+        "category": "funny",
+        "short": "ct",
+        "commands": [
+            {
+                "name": "setup",
+                "details": "สร้างช่องแชท",
+                "short": "s",
+                "attributes": []
+            }
+        ]
+    },
+    {
+        "name": "cheerup",
+        "description": "ให้กำลังใจ",
+        "category": "funny",
+        "short": "cu",
+        "commands": []
+    },
+    {
+        "name": "fan",
+        "description": "แฟน",
+        "category": "funny",
+        "short": "",
+        "commands": [
+            {
+                "name": "set",
+                "details": "ตั้งชื่อและรูปภาพ",
+                "short": "s",
+                "attributes": [
+                    "ชื่อ",
+                    "ลิงก์รูปภาพ"
+                ]
+            },
+            {
+                "name": "setname",
+                "details": "ตั้งชื่อ",
+                "short": "sn",
+                "attributes": [
+                    "ชื่อ"
+                ]
+            },
+            {
+                "name": "setimage",
+                "details": "ตั้งโปรไฟล์",
+                "short": "si",
+                "attributes": [
+                    "ลิงก์รูปภาพ"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "find",
+        "description": "ค้นหา",
+        "category": "general",
+        "short": "f",
+        "commands": [
+            {
+                "name": "channel",
+                "details": "ค้นหาช่องแชท",
+                "short": "ch",
+                "attributes": [
+                    "คำค้นหา"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "food",
+        "description": "อาหาร",
+        "category": "funny",
+        "short": "fd",
+        "commands": [
+            {
+                "name": "random",
+                "details": "เพื่อสุ่มอาหาร",
+                "short": "r",
+                "attributes": []
+            }
+        ]
+    },
+    {
+        "name": "friend",
+        "description": "เพื่อน",
+        "category": "funny",
+        "short": "fr",
+        "commands": [
+            {
+                "name": "add",
+                "details": "เพิ่มเพื่อน",
+                "short": "a",
+                "attributes": [
+                    "ชื่อเพื่อน (เพิ่มหลายคนต้องคั่นด้วย เว้นวรรค)"
+                ]
+            },
+            {
+                "name": "remove",
+                "details": "ลบเพื่อน",
+                "short": "rm",
+                "attributes": [
+                    "ชื่อเพื่อน (เพิ่มหลายคนต้องคั่นด้วย เว้นวรรค)"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "group",
+        "description": "เกี่ยวกับกลุ่ม",
+        "category": "study",
+        "short": "g",
+        "commands": [
+            {
+                "name": "random",
+                "details": "ทำการแบ่งกลุ่มตามรายชื่อเพื่อน",
+                "short": "r",
+                "attributes": [
+                    "จำนวนกลุ่ม (ไม่จำเป็น ถ้าไม่ใส่จะเป็นการสุ่มคนเดียว)",
+                    "ชื่อเพื่อน (เพิ่มหลายคนต้องคั่นด้วย เว้นวรรค)"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "help",
+        "description": "ช่วยเหลือ",
+        "category": "general",
+        "short": "h",
+        "commands": []
+    },
+    {
+        "name": "hi",
+        "description": "ทักทาย",
+        "category": "funny",
+        "short": "",
+        "commands": []
+    },
+    {
+        "name": "role",
+        "description": "บทบาท",
+        "category": "general",
+        "short": "r",
+        "commands": [
+            {
+                "name": "create",
+                "details": "สร้างบทบาท",
+                "short": "c",
+                "attributes": [
+                    "ชื่อบทบาท"
+                ]
+            },
+            {
+                "name": "delete",
+                "details": "ลบบทบาท",
+                "short": "d",
+                "attributes": [
+                    "ชื่อบทบาท"
+                ]
+            },
+            {
+                "name": "list",
+                "details": "ดูบทบาททั้งหมด",
+                "short": "l",
+                "attributes": []
+            }
+        ]
+    },
+    {
+        "name": "rps",
+        "description": "เป่ายิ่งชุบ",
+        "category": "funny",
+        "short": "",
+        "commands": []
+    }
+]
+

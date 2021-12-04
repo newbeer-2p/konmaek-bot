@@ -3,6 +3,7 @@ from discord.ext import commands
 import os
 import asyncio
 from settings import *
+from modules import *
 import firebase_admin
 from firebase_admin import credentials, db
 
@@ -20,7 +21,12 @@ async def on_ready():
     print(f"We have logged in as {bot.user}")
 
 cmds = []
-short_cmds = {"au":"author", "cu":"cheerup", "h":"help", "p":"perm", "r":"role", "ct":"chat", "g":"group"}
+help_cmds = load_json("database/help.json")
+short_cmds = {}
+for cmd in help_cmds:
+    if cmd["short"] != "":
+        short_cmds[cmd["short"]] = cmd["name"]
+
 
 for file in os.listdir("commands"):
     if ".py" in file:
@@ -47,7 +53,7 @@ async def on_message(message):
             cmd = msg[0];
             print(f"{author} calls '{cmd}'")
 
-            if cmd in ["role", "perm", "r", "p", "chatbot", "chat", "ct"]:
+            if cmd in dont_cmds:
                 if not message.author.id == authorId:
                     return
             if cmd in cmds:
