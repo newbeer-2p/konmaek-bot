@@ -17,7 +17,7 @@ class rps(commands.Cog, name="rps"):
         embed = discord.Embed(
             title="เกมเป่ายิ้งฉุบ",
             description="ค้อน กรรไกร กระดาษ ออกอะไรดีน้าาาาา\n🇷 : ค้อน, 🇵 : กระดาษ, 🇸 : กรรไกร\nกดสติ๊กเกอร์ เพื่อเป่ายิ่งฉุบน้า",
-            color=colorTheme
+            color=themeColor
         )
         embed.set_image(url="https://www.kindpng.com/picc/m/212-2122689_rock-paper-scissors-random-rock-paper-scissors-png.png")
 

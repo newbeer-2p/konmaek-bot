@@ -17,7 +17,7 @@ class CheerUp(commands.Cog, name="CheerUp"):
         ]
         embed = discord.Embed(
             description=random.choice(text),
-            color=colorTheme
+            color=themeColor
         )
         msg = await ctx.channel.send(embed=embed)
         for emoji in ["🇸", "🇺", "🇿", "🇴"]:

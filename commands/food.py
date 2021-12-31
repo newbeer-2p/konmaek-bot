@@ -17,7 +17,7 @@ class Food(commands.Cog, name="Food"):
             embed = discord.Embed(
                 title=random_food["name"],
                 description=f'({random_food["eng_name"]})',
-                color=colorTheme
+                color=themeColor
             )
             if len(random_food['meat']) != 0:
                 embed.add_field(
@@ -43,7 +43,7 @@ class Food(commands.Cog, name="Food"):
         else:
             embed = discord.Embed(
                 title=f"เมนูทั้งหมดที่เค้ามีคือ {len(data)} เมนู",
-                color=colorTheme
+                color=themeColor
             )
             for food in data:
                 embed.add_field(

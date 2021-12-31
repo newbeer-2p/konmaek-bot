@@ -21,19 +21,19 @@ class Role(commands.Cog, name="Role"):
                     embed = discord.Embed(
                         title=f"สร้างบทบาท **{attr}** สำเร็จ",
                         description=f"ทำการเพิ่มบทบาท **{attr}** ลงเซิฟเวอร์เรียบร้อย",
-                        color=0x00ff00
+                        color=greenColor
                     )
                 except:
                     embed = discord.Embed(
                             title=f"สร้างบทบาท **{attr}** ไม่สำเร็จ",
                             description=f"เนื่องจากเธอยังไม่ได้ให้ Permission สำหรับ **☁ เจ้าก้อนเมฆ ☁** ตัวนี้",
-                            color=0xff0000
+                            color=redColor
                         )
             else:
                 embed = discord.Embed(
                     title=f"สร้างบทบาท **{attr}** ไม่สำเร็จ",
                     description=f"เนื่องจากมีบทบาท **{attr}** อยู่แล้ว",
-                    color=0xff0000
+                    color=redColor
                 )
         elif cmd == "delete" or cmd == "d":
             for role in roles:
@@ -43,33 +43,33 @@ class Role(commands.Cog, name="Role"):
                         embed = discord.Embed(
                             title=f"ลบบทบาท **{attr}** สำเร็จ",
                             description=f"ทำการลบบทบาท **{attr}** ออกจากเซิฟเวอร์เรียบร้อย",
-                            color=0x00ff00
+                            color=greenColor
                         )
                     except:
                         embed = discord.Embed(
                             title=f"ลบบทบาท **{attr}** ไม่สำเร็จ",
                             description=f"เนื่องจากเธอยังไม่ได้ให้ Permission สำหรับ **☁ เจ้าก้อนเมฆ ☁** ตัวนี้",
-                            color=0xff0000
+                            color=redColor
                         )
                     break
             else:
                 embed = discord.Embed(
                     title=f"ลบบทบาท **{attr}** ไม่สำเร็จ",
                     description=f"เนื่องจากไม่มีบทบาท **{attr}** ในเซิฟเวอร์",
-                    color=0xff0000
+                    color=redColor
                 )
         elif cmd == "list" or cmd == "l":
             roles = [f"- {y.name}" for y in roles]
             embed = discord.Embed(
                 title=f"บทบาททั้งหมดใน {guild.name}",
                 description="\n".join(roles),
-                color=colorTheme
+                color=themeColor
             )
         else:
             embed = discord.Embed(
                 title="ลองให้คำสั่งนี้ช่วยเหลือเธอสิ",
                 description=f"```{prefix}help```",
-                color=colorTheme
+                color=themeColor
             )
 
         await ctx.channel.send(embed=embed)

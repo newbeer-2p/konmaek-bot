@@ -20,7 +20,7 @@ class Hi(commands.Cog, name="Hi"):
         
         embed = discord.Embed(
             description=random.choice(text),
-            color=colorTheme
+            color=themeColor
         )
 
         msg = await ctx.channel.send(embed=embed)

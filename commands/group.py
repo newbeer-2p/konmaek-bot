@@ -15,7 +15,7 @@ class Group(commands.Cog, name="Group"):
             attr = attr.split()
             embed = discord.Embed(
                     title="📜 ผลจากการสุ่มกลุ่ม 📜",
-                    color=colorTheme
+                    color=themeColor
                 )
             if not attr[0].isdigit():
                 embed.add_field(
@@ -50,7 +50,7 @@ class Group(commands.Cog, name="Group"):
             embed = discord.Embed(
                 title="📜 คำสั่งเกี่ยวกับกลุ่ม 📜",
                 description=f"อยากให้เราช่วยเธอหรอ คำสั่งนี้อาจเธอได้นะ ```{prefix}help group```",
-                color=colorTheme
+                color=themeColor
             )
 
         await ctx.channel.send(embed=embed)

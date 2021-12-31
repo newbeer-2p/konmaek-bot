@@ -13,7 +13,7 @@ class Me(commands.Cog, name="Me"):
         embed = discord.Embed(
             title=f"{user.display_name}",
             description=f"({user})",
-            color=colorTheme
+            color=themeColor
         )
         embed.set_thumbnail(url=user.avatar_url)
 

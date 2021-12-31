@@ -9,20 +9,20 @@ class Find(commands.Cog, name="Find"):
     
     @commands.command()
     async def find(self, ctx, cmd, *, attr):
-        find = False
         if cmd in ["channel", "ch"]:
             embed = discord.Embed(
                 title="ผลการค้นหา Channel: ",
-                color=colorTheme
+                color=themeColor
             )
             for ch in ctx.guild.channels:
                 if attr in ch.name:
-                    find = True
                     embed.add_field(name="Channel: ", value=f"{ch.mention}", inline=False)
         else:
+            find_cmd = ["channel"]
             embed = discord.Embed(
-                description="Find",
-                color=colorTheme
+                title="จะให้ค้นหาอะไรหรอ",
+                description="\n".join(find_cmd),
+                color=themeColor
             )
 
         await ctx.channel.send(embed=embed)

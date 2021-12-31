@@ -13,7 +13,7 @@ class Help(commands.Cog, name="Help"):
         embed = discord.Embed(
             title="😎 คำสั่งช่วยเหลือท่าน 😎",
             description=f"**Prefix :** ```{prefix}```",
-            color=colorTheme
+            color=themeColor
         )
         help_cmds = load_json("database/help.json")
 
@@ -23,7 +23,7 @@ class Help(commands.Cog, name="Help"):
                 prefix_cmd = prefix + cmd["name"]
                 if cmd["name"] == attr and len(cmd["commands"]) != 0:
                     for c in cmd["commands"]:
-                        help_cmds_text += f"\n{prefix_cmd} {c['name']} [{' ['.join(c['attributes'])}] : ({c['short']}) {c['details']}"
+                        help_cmds_text += f"\n{prefix_cmd} {c['name']} [{'] ['.join(c['attributes'])}] : ({c['short']}) {c['details']}"
                     embed.add_field(name=f"คำสั่งของ {cmd['name']}", value=f"```{help_cmds_text} ```", inline=False)
                     break
                 elif cmd["name"] == attr and len(cmd["commands"]) == 0:

@@ -12,7 +12,7 @@ class Author(commands.Cog, name="Author"):
         embed = discord.Embed(
             title="🌈 คนนี้คือเจ้าของของเค้าเอง 🌈",
             description="``` นิวเบียร์ (Newbeer) ```\nช่องทางการติดต่อ:",
-            color=colorTheme
+            color=themeColor
         )
         embed.add_field(
             name="Github :",

@@ -35,19 +35,19 @@ class Chat(commands.Cog, name="Chat"):
                     embed = discord.Embed(
                         title=title,
                         description=f"สำเร็จ! คุยกับเค้าได้ในนี้เลย {channel.mention}",
-                        color=0x00ff00
+                        color=greenColor
                     )
                 except:
                     embed = discord.Embed(
                         title=title,
                         description="ไม่สำเร็จ! เนื่องจาก Permission ไม่ถึง",
-                        color=0xff0000
+                        color=redColor
                     )
             else:
                 embed = discord.Embed(
                     title=title,
                     description=f"ไม่สำเร็จ! เนื่องจาก มี {channel.mention} นี้อยู่แล้ว",
-                    color=0xff0000
+                    color=redColor
                 )
         else:
             title="อยากคุยกับเค้าหรอ"
@@ -55,13 +55,13 @@ class Chat(commands.Cog, name="Chat"):
                 embed = discord.Embed(
                         title=title,
                         description=f"แต่ยังไม่มีห้องเลยนะ ลองใช้คำสั่งนี้ก่อนนะ ```{prefix}chat setup``` ",
-                        color=colorTheme
+                        color=themeColor
                     )
             else:
                 embed = discord.Embed(
                         title=title,
                         description=f"มาคุยในห้องนี้เลย {channel.mention}",
-                        color=colorTheme
+                        color=themeColor
                     )
         await ctx.channel.send(embed=embed)
 

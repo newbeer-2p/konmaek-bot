@@ -37,7 +37,7 @@ class Chatbot(commands.Cog, name="Chatbot"):
         
         embed = discord.Embed(
             description=random.choice(messages),
-            color=colorTheme
+            color=themeColor
         )
 
         await ctx.channel.send(embed=embed)

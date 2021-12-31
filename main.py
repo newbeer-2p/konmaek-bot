@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.ext import tasks
 import os
 import asyncio
 from settings import *
@@ -56,10 +57,12 @@ async def on_message(message):
             if cmd in dont_cmds:
                 if not message.author.id == authorId:
                     return
+            # attrs = {txt[len(cmd)+1:len(txt)]}
+            attrs = message.content[len(cmd)+1+len(prefix):len(message.content)]
             if cmd in cmds:
-                message.content = f"{prefix}{cmd} {txt[len(cmd)+1:len(txt)]}"
+                message.content = f"{prefix}{cmd} {attrs}"
             elif cmd in short_cmds:
-                message.content = f"{prefix}{short_cmds[cmd]} {txt[len(cmd)+1:len(txt)]}"
+                message.content = f"{prefix}{short_cmds[cmd]} {attrs}"
             await bot.process_commands(message)
             return
 
@@ -67,7 +70,7 @@ async def on_message(message):
             msg_del = await message.channel.send(
                 embed=discord.Embed(
                     description="เอ๊ะ มีใครเรียกชื่อนะ",
-                    color=colorTheme
+                    color=themeColor
                 )
             )
             print(f"{message.author.name} says 'ก้อนเมฆ' in {message.channel.id}")

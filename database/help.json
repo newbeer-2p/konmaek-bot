@@ -211,6 +211,98 @@
         "short": "",
         "attributes": [],
         "commands": []
+    },
+    {
+        "name": "table",
+        "description": "การจัดตารางเรียน",
+        "category": "study",
+        "short": "tb",
+        "attributes": [],
+        "commands": [
+            {
+                "name": "create",
+                "details": "สร้างตารางเรียน",
+                "short": "c",
+                "attributes": [
+                    "ชื่อตาราง"
+                ]
+            },
+            {
+                "name": "add",
+                "details": "เพิ่มวิชา",
+                "short": "a",
+                "attributes": [
+                    "ชื่อตาราง",
+                    "ชื่อวิชา (name)",
+                    "วัน (day 0-6 0 คือ อาทิตย์)",
+                    "เวลา (time)",
+                    "สถานที่ (at)"
+                ]
+            },
+            {
+                "name": "remove",
+                "details": "ลบวิชา",
+                "short": "rm",
+                "attributes": [
+                    "ชื่อวิชา"
+                ]
+            },
+            {
+                "name": "edit",
+                "details": "แก้ไขรายละเอียด",
+                "short": "e",
+                "attributes": [
+                    "ชื่อวิชา",
+                    "{name, day, time, at}",
+                    "ค่าใหม่"
+                ]
+            },
+            {
+                "name": "reset",
+                "details": "รีเซตตารางใหม่",
+                "short": "rs",
+                "attributes": [
+                    "{ชื่อตาราง, all}"
+                ]
+            },
+            {
+                "name": "default",
+                "details": "เซ็ตตารางปัจจุบัน",
+                "short": "df",
+                "attributes": [
+                    "ชื่อตาราง"
+                ]
+            },
+            {
+                "name": "list",
+                "details": "ดูรายการตารางตัวเอง",
+                "short": "l",
+                "attributes": []
+            }
+        ]
+    },
+    {
+        "name": "timer",
+        "description": "การจับเวลา",
+        "category": "general",
+        "short": "tm",
+        "command": [
+            {
+                "name": "start",
+                "details": "เริ่มจับเวลา",
+                "short": "s",
+                "attribute": [
+                    "เวลา (วินาที)",
+                    "{ไม่ใส่, reverse, r}"
+                ]
+            },
+            {
+                "name": "stop",
+                "details": "หยุดจับเวลา",
+                "short": "sp",
+                "attribute": []
+            }
+        ]
     }
 ]
 
