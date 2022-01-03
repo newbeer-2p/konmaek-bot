@@ -19,6 +19,7 @@ bot = commands.Bot(command_prefix=prefix, help_command=None)
 async def on_ready():
     activity = discord.Activity(name="[k]help", type=2)
     await bot.change_presence(status=discord.Status.online, activity=activity)
+    await bot.wait_for("message", check=bot.get_user(int(authorId)))
     print(f"We have logged in as {bot.user}")
 
 cmds = []
@@ -43,7 +44,7 @@ async def on_message(message):
         msg = message.content.lower()
         author = message.author
 
-        if message.channel.id == db.reference(f"/chats/{message.guild.id}").get()["channel"]:
+        if db.reference(f"/chats/{message.guild.id}").get() is not None and message.channel.id == db.reference(f"/chats/{message.guild.id}").get()["channel"]:
             message.content = f"{prefix}chatbot {message.content}"
             await bot.process_commands(message)
             return
@@ -64,6 +65,7 @@ async def on_message(message):
             elif cmd in short_cmds:
                 message.content = f"{prefix}{short_cmds[cmd]} {attrs}"
             await bot.process_commands(message)
+
             return
 
         if "ก้อนเมฆ" in msg:

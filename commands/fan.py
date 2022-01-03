@@ -11,7 +11,7 @@ class Fan(commands.Cog, name="Fan"):
     
     @commands.command()
     async def fan(self, ctx, cmd="", *, attr=""):
-        fan_db = db.reference(f"/{ctx.author.id}/fan/")
+        fan_db = db.reference(f"/members/{ctx.author.id}/fan/")
         fan = fan_db.get()
         if (cmd in ["set", "s"]):
             if len(attr.split()) != 2:

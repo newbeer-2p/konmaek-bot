@@ -11,7 +11,7 @@ class Friend(commands.Cog, name="Friend"):
     
     @commands.command()
     async def friend(self, ctx, cmd="", *, attr=""):
-        friends_db = db.reference(f"/{ctx.author.id}/friends/")
+        friends_db = db.reference(f"/members/{ctx.author.id}/friends/")
         friends = friends_db.get()
 
         if cmd in ["add", "a"]:
@@ -34,7 +34,7 @@ class Friend(commands.Cog, name="Friend"):
             friends_rm = attr.split()
             for key in friends:
                 if friends[key]["name"] in friends_rm:
-                    db.reference(f"/{ctx.author.id}/friends/{key}/").delete()
+                    db.reference(f"/members/{ctx.author.id}/friends/{key}/").delete()
             embed = discord.Embed(
                 title="ได้ลบเพื่อนเรียบร้อยแล้ว",
                 description=f"{attr} ถูกลบออกรายชื่อเพื่อนเรียบร้อยแล้ว",
