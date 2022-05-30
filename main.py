@@ -19,7 +19,7 @@ bot = commands.Bot(command_prefix=prefix, help_command=None)
 async def on_ready():
     activity = discord.Activity(name="[k]help", type=2)
     await bot.change_presence(status=discord.Status.online, activity=activity)
-    await bot.wait_for("message", check=bot.get_user(int(authorId)))
+    # await bot.wait_for("message", check=bot.get_user(int(authorId)))
     print(f"We have logged in as {bot.user}")
 
 cmds = []

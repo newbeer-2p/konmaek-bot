@@ -23,11 +23,11 @@ class Help(commands.Cog, name="Help"):
                 prefix_cmd = prefix + cmd["name"]
                 if cmd["name"] == attr and len(cmd["commands"]) != 0:
                     for c in cmd["commands"]:
-                        help_cmds_text += f"\n{prefix_cmd} {c['name']} [{'] ['.join(c['attributes'])}] : ({c['short']}) {c['details']}"
+                        help_cmds_text += f"\n{prefix_cmd} {c['name']} [{'] ['.join(c['attributes'])}]\n: ({c['short']}) {c['details']}\n"
                     embed.add_field(name=f"คำสั่งของ {cmd['name']}", value=f"```{help_cmds_text} ```", inline=False)
                     break
                 elif cmd["name"] == attr and len(cmd["commands"]) == 0:
-                    help_cmds_text += f"{prefix}{cmd['name']} "+f"[{' ['.join(cmd['attributes'])}]"*(len(cmd["attributes"]) != 0)+f" : ({cmd['short']}) คำสั่งเกี่ยวกับ{cmd['description']}"
+                    help_cmds_text += f"{prefix}{cmd['name']} "+f"[{' ['.join(cmd['attributes'])}]"*(len(cmd["attributes"]) != 0)+f"\n: ({cmd['short']}) คำสั่งเกี่ยวกับ{cmd['description']}\n"
                     embed.add_field(name=f"คำสั่งของ {cmd['name']}", value=f"```{help_cmds_text} ```", inline=False)
         else:
             for cmd in help_cmds:

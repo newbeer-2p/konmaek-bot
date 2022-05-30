@@ -4,21 +4,27 @@ from settings import *
 from modules import *
 from firebase_admin import db
 
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 class Table(commands.Cog, name="Table"):
 
     def __init__(self, bot : commands.Bot):
         self.bot = bot
+        self.announce_minute = -1
         self.check_table_schedule.start()
 
-    @tasks.loop(minutes=1)
+    # @tasks.loop(minutes=1)
+    @tasks.loop(seconds=10)
     async def check_table_schedule(self):
-        date = datetime.now()
+        date = datetime.now(tz=timezone(timedelta(hours = 7)))
+        # print(date)
         dates = date.strftime("%w:%X").split(":")
         day = dates[0]
         hour = dates[1]
         minute = dates[2]
+        if int(minute) == self.announce_minute:
+            return
+        self.announce_minute = int(minute)
         for guild in self.bot.guilds:
             chn_db = db.reference(f"/guilds/{guild.id}/announce/")
             if chn_db.get() is None or chn_db.get()["id"] is None or chn_db.get()["id"] not in [ch.id for ch in guild.channels]:
@@ -55,7 +61,7 @@ class Table(commands.Cog, name="Table"):
         tables = table_db.get()
         if name == ".":
             name = tables["default"]
-        if cmd == "announce":
+        if cmd in ["announce", "an"]:
             if name == "" or len(attr.split()) != 1 or attr.lower() not in ["on", "off"]:
                 await error_text(ctx, "table")
                 return
@@ -65,7 +71,7 @@ class Table(commands.Cog, name="Table"):
             announce_db = db.reference(f"/guilds/{ctx.guild.id}/announce/members/{ctx.author.id}/")
             announces = announce_db.get()
             if attr.lower() == "on":
-                if name in [announces[table] for table in announces]:
+                if announces is None or name in [announces[table] for table in announces]:
                     announce_db.update({
                         "name" : ctx.author.display_name
                     })

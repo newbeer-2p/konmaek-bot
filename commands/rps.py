@@ -22,7 +22,7 @@ class rps(commands.Cog, name="rps"):
         embed.set_image(url="https://www.kindpng.com/picc/m/212-2122689_rock-paper-scissors-random-rock-paper-scissors-png.png")
 
         msg = await ctx.channel.send(embed=embed)
-        rps_db = db.reference(f"/{ctx.author.id}/rps/")
+        rps_db = db.reference(f"/members/{ctx.author.id}/rps/")
         rps_db.update({
             "msg_id" : msg.id
         })
@@ -34,14 +34,12 @@ class rps(commands.Cog, name="rps"):
     async def on_reaction_add(self, reaction, user):
         if self.bot.user.id == user.id:
             return
-        rps_db = db.reference(f"/{user.id}/rps/")
+        rps_db = db.reference(f"/members/{user.id}/rps/")
         msg_id = rps_db.get()
-        try:
-            msg_id["msg_id"]
-        except:
+        if msg_id is None or msg_id["msg_id"] != reaction.message.id:
+            await reaction.message.add_reaction(reaction.emoji)
             return
-        if msg_id["msg_id"] != reaction.message.id:
-            return
+        print("On My God")
         rps_db.delete()
         rps = ["ค้อน", "กระดาษ", "กรรไกร"]
         rps_emoji = {"ค้อน": "🇷","กระดาษ": "🇵","กรรไกร": "🇸"}
